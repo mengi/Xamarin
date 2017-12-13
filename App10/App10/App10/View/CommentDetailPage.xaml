@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10.View.CommentDetailPage"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             Title="{Binding CommentServiceName}">
+    
+    <ContentPage.Content>
+        <StackLayout >
+            <ScrollView VerticalOptions="FillAndExpand" Padding="5">
+                <StackLayout Padding="5,5,5,5">
+                    <controls:CircleImage
+                        Source="{Binding CommentImageUrl}"
+					    HeightRequest="150"
+					    WidthRequest="150"
+					    HorizontalOptions="Center"
+					    VerticalOptions ="Center"
+					    BorderColor="#2196F3"
+                        Aspect="AspectFill"
+					    BorderThickness="1">
+                    </controls:CircleImage>
+
+                    <Label Text="{Binding CommentUserName , Mode = TwoWay}"  VerticalOptions="Center" 
+                           HorizontalOptions="CenterAndExpand" 
+                           FontSize="Large" FontAttributes="Bold" TextColor="Gray"/>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+
+                        <Label FontAttributes="None" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" 
+                                   VerticalTextAlignment="Center" FontSize="15"
+                                   Text="{Binding CommentStar , Mode = TwoWay}" TextColor="Gray" />
+
+                        <Label FontAttributes="None" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" 
+                                   VerticalTextAlignment="Center" FontSize="15"
+                                   Text="{Binding CommentDate , Mode = TwoWay, StringFormat='{0:MMMM dd, yyyy}'}" TextColor="Gray" />
+
+                    </StackLayout>
+
+                    <Label Text="{Binding CommentDesc,  Mode = TwoWay}"  TextColor="Gray" Margin="0,5,0,0" FontSize="15"/>
+                    <!--<Label x:Name="lblEducation" Margin="0,-5,0,0" TextColor="#767676" FontSize="13"/>-->
+
+                </StackLayout>
+    
+            </ScrollView>
+            <Grid RowSpacing="0" ColumnSpacing="0" VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button 
+				    x:Name="ButtonLike"
+				    Grid.Row="0"
+                    Image="ic_favorite_border_white_24dp.png"
+				    BackgroundColor="#2196F3" 
+				    BorderRadius="0" 
+				    TextColor="White" 
+				    Text="Like"/>
+
+                <Button 
+				    x:Name="ButtonShare"
+				    Grid.Row="0"
+				    Grid.Column="1"
+                    Image="ic_share_white_24dp.png"
+				    BackgroundColor="#81C134" 
+				    BorderRadius="0" 
+				    TextColor="White" 
+				    Text="Share"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

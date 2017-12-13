@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10.View.UserRegisterPage"
+             Title="User Register">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Label Margin="0, 15, 0, 0"  Text="Register Form Page" FontSize="Large" TextColor="#2196F3" 
+                       HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <ScrollView VerticalOptions="FillAndExpand" Padding="5">
+
+                <Grid VerticalOptions="FillAndExpand" Margin="0, 15, 0, 0">
+                    <!--
+                    <Grid.ColumnSpacing>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>20</OnIdiom.Phone>
+                            <OnIdiom.Tablet>40</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.ColumnSpacing>
+                    <Grid.RowSpacing>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>10</OnIdiom.Phone>
+                            <OnIdiom.Tablet>20</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.RowSpacing>
+                    <Grid.Padding>
+                        <OnIdiom x:TypeArguments="Thickness">
+                            <OnIdiom.Phone>10,10,10,0</OnIdiom.Phone>
+                            <OnIdiom.Tablet>20,20,20,0</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.Padding>
+                    -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+			            Grid.Row="0"
+			            FontSize="Medium"
+			            Text="Name"
+			            TextColor="#2196F3"
+			            VerticalOptions="Center"  />
+
+                    <Entry 
+                        x:Name="registerUserName"
+			            Grid.Row="0"
+			            Grid.Column="1"
+			            Placeholder="First and Last" 
+			            Keyboard="Text"/>
+
+                    <Label
+			            Grid.Row="1"
+			            FontSize="Medium"
+			            Text="Email"
+			            TextColor="#2196F3"
+			            VerticalOptions="Center"  />
+
+                    <Entry 
+                        x:Name="registerUserEmail"
+			            Grid.Row="1"
+			            Grid.Column="1" 
+			            Placeholder="Email Enter"
+			            Keyboard="Email" />
+
+                    <Label
+			            Grid.Row="2"
+			            FontSize="Medium"
+			            Text="Password"
+			            TextColor="#2196F3"
+			            VerticalOptions="Center"  />
+
+                    <Entry 
+                        x:Name="registerUserPassword"
+			            Grid.Row="2"
+			            Grid.Column="1" 
+			            Placeholder="Password"
+			            IsPassword="True" />
+                </Grid>
+
+            </ScrollView>
+            <Button 
+			    x:Name="registerButtonSave"
+			    BackgroundColor="#2196F3"
+			    BorderRadius="0"
+			    TextColor="White" 
+			    Text="Register"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

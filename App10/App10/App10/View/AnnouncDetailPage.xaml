@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10.View.AnnouncDetailPage"
+             Title="{Binding HeadTitle}">
+    
+    <ContentPage.Content>
+        <StackLayout >
+            <ScrollView VerticalOptions="FillAndExpand" Padding="5">
+                <StackLayout Padding="5,5,5,5">
+                    <Image Source="{Binding ProfileImage}" Aspect="AspectFill" />
+
+                    <Label Text="{Binding HeadTitle}" TextColor="Black" Margin="0,5,0,0" FontSize="15"/>
+                    <Label Text="{Binding HeadLines}" Margin="0,-5,0,0" TextColor="#767676" FontSize="13"/>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding HeadView, StringFormat='{0:n0} views'}" TextColor="#767676" FontSize="13"/>
+                        <!--Label Text="{Binding PublishedAtHumanized}" TextColor="#767676" FontSize="13"/>-->
+                     </StackLayout>
+
+                    <Label Text="{Binding HeadLinesDesc,  Mode = TwoWay}"  TextColor="Gray" Margin="0,5,0,0" FontSize="15"/>
+                </StackLayout>
+    
+            </ScrollView>
+            <Grid RowSpacing="0" ColumnSpacing="0" VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button 
+				    x:Name="ButtonLike"
+				    Grid.Row="0"
+                    Image="ic_favorite_border_white_24dp.png"
+				    BackgroundColor="#2196F3" 
+				    BorderRadius="0" 
+				    TextColor="White" 
+				    Text="Like"/>
+
+                <Button 
+				    x:Name="ButtonShare"
+				    Grid.Row="0"
+				    Grid.Column="1"
+                    Image="ic_share_white_24dp.png"
+				    BackgroundColor="#81C134" 
+				    BorderRadius="0" 
+				    TextColor="White" 
+				    Text="Share"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

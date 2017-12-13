@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App10.Helpers"
+             x:Class="App10.View.SubCategoryDetailPage">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView VerticalOptions="FillAndExpand" Padding="5">
+                <StackLayout Padding="5,5,5,5">
+                    <Image Source="{Binding subImageUrl}" HeightRequest="200" WidthRequest="200" Aspect="AspectFill" />
+                    <Label Text="{Binding subTitle}" TextColor="Gray" FontAttributes="Bold" FontSize="Large" Margin="0,5,0,0"/>
+                    <controls:HtmlFormattedLabel Text="{Binding subDesc}" TextColor="Gray" Margin="0,5,0,0" FontSize="15"/>
+                </StackLayout>
+
+            </ScrollView>
+            <Grid RowSpacing="0" ColumnSpacing="0" VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button 
+				    x:Name="ButtonShare"
+				    Grid.Row="0"
+				    Grid.Column="0"
+                    Image="ic_share_white_24dp.png"
+				    BackgroundColor="#81C134" 
+				    BorderRadius="0" 
+				    TextColor="White" 
+				    Text="Share"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

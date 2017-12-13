@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:App10;assembly=App10"
+             x:Class="App10.MainPage">
+
+    <TabbedPage.Children>
+        <pages:ProfilePage x:Name="HomePage" Icon="ic_home_white_24dp.png" Title="Home" />
+        <pages:MoviesPage x:Name="MoviesPage" Icon="ic_subscriptions_white_24dp.png" Title="Movies" />
+        <pages:PracticePage x:Name="PracticePage" Icon="ic_local_library_white_24dp.png" Title="Practic" />
+        <pages:SettingsPage x:Name="AboutPage" Icon="ic_info_outline_white_24dp.png" Title="About" />
+        <pages:ContactMain x:Name="ContactPage" Icon="ic_contacts_white_24dp.png" Title="Contact" />
+    </TabbedPage.Children>
+
+</TabbedPage>

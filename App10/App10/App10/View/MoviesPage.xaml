@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="App10.View.MoviesPage">
+
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <ListView x:Name="lstMovies" CachingStrategy="RecycleElement" SeparatorVisibility="None" ItemsSource="{Binding .}"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid RowSpacing="0" ColumnSpacing="10" Padding="10, 10, 10, 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="0"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                            </Grid>
+                            <Frame Padding="1" BackgroundColor="#2196F3" HasShadow="True" OutlineColor="#bbb">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="200"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Frame BackgroundColor="White" Padding="5" HasShadow="False">
+                                        <Image Source="{Binding MoviesImageUrl}" Aspect="AspectFill"
+                                              VerticalOptions="FillAndExpand" HeightRequest="200"/>
+                                    </Frame>
+
+                                    <StackLayout Grid.Row="1" Padding="5,0,5,5" Spacing="1">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Grid.Column="0" Text="{Binding MoviesTitle}" VerticalOptions="Start" HorizontalOptions="StartAndExpand" FontSize="16" LineBreakMode="TailTruncation" 
+                           TextColor="White" FontAttributes="Bold"/>
+
+                                            <Label Grid.Column="1" Text="{Binding MoviesUploadDate}" FontSize="12" TextColor="White" 
+                                               HorizontalOptions="EndAndExpand"  VerticalOptions="Start" LineBreakMode="TailTruncation"/>
+
+                                        </Grid>
+
+                                        <Label Text="{Binding MoviesDesc}" HorizontalOptions="Start" VerticalOptions="Start"  FontSize="12"
+                           TextColor="White"/>
+
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button Grid.Column="0" BackgroundColor="#2196F3" Image="ic_visibility_white_24dp.png" VerticalOptions="Start" HorizontalOptions="StartAndExpand" BorderRadius="16" HeightRequest="34" BorderWidth="0"/>
+                                            <Button Grid.Column="1" BackgroundColor="#2196F3" Image="ic_share_white_24dp.png"   VerticalOptions="Start"  HorizontalOptions="EndAndExpand" BorderRadius="16" HeightRequest="34" BorderWidth="0"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

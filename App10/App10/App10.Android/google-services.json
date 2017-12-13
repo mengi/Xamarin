@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "591788795649",
+    "firebase_url": "https://xamarin-7173d.firebaseio.com",
+    "project_id": "xamarin-7173d",
+    "storage_bucket": "xamarin-7173d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591788795649:android:b7632a2d79441728",
+        "android_client_info": {
+          "package_name": "com.companyname.App10"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591788795649-fvo7h2dfg8e55okdlk8ij6mn24i56fia.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.App10",
+            "certificate_hash": "310c8cf903f8c75e8f4b49e20e9c286b45b3959d"
+          }
+        },
+        {
+          "client_id": "591788795649-l5cr09jgpetq88qpb8s1t4v7vr3ua52h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBen3aTKX8b3PmH848lvzdFQIH0UBKTCgc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591788795649-l5cr09jgpetq88qpb8s1t4v7vr3ua52h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

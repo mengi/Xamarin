@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="App10.SettingsPage"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_perm_contact_calendar_white_24dp.png" Priority="0" Clicked="onRequest"/>
+        <ToolbarItem Icon="ic_account_circle_white_24dp.png"  Priority="1" Clicked="onLogin"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Vertical" Padding="15,20,15,20">
+                    <controls:CircleImage
+                        Source="doktor.png"
+					    HeightRequest="150"
+					    WidthRequest="150"
+					    HorizontalOptions="CenterAndExpand"
+					    VerticalOptions ="CenterAndExpand"
+					    BorderColor="#2196F3"
+                        Aspect="AspectFill"
+					    BorderThickness="1">
+                    </controls:CircleImage>
+
+                    <Label x:Name="lbldoctorName"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" 
+                           FontSize="Large" FontAttributes="Bold" TextColor="Gray"/>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Button 
+					        x:Name="ButtonSettingCall"
+					        BackgroundColor="#2196F3"
+					        BorderRadius="0"
+                            Grid.Row="0"
+					        Margin="0,0,5,0"
+                            TextColor="White" 
+                            WidthRequest="175"
+                            HeightRequest="50"
+					        Image="ic_phone_white_24dp.png"
+					        Text="Call"
+                            FontSize="Medium"/>
+                        
+                        <Label 
+                            x:Name="lblPhoneNumber"
+                            Grid.Row="0"
+					        Grid.Column="1"
+					        Grid.ColumnSpan="2"
+					        VerticalOptions="Center"
+					        HorizontalOptions="Center"
+					        Margin="15,0,5,0"
+                            FontSize="Medium"/>
+                    </StackLayout>
+
+                    <Label x:Name="lblCv" TextColor="Gray" Margin="0,5,0,0" FontSize="15"/>
+                    <!--<Label x:Name="lblEducation" Margin="0,-5,0,0" TextColor="#767676" FontSize="13"/>-->
+                    
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

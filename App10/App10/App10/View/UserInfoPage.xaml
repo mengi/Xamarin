@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="App10.View.UserInfoPage"
+             BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Icon="ic_add_a_photo_white_24dp.png" Priority="0" Clicked="onPhoto"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Margin="0, 15, 0, 0"  Text="User Information Form Page" FontSize="Large" TextColor="#2196F3" 
+                       HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <controls:CircleImage x:Name="userImage" Source="{Binding userImageUrl}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
+                                  HeightRequest="100" WidthRequest="100" BorderColor="#2196F3" 
+                                  BorderThickness="1" Aspect="AspectFill"/>
+
+            <ScrollView VerticalOptions="FillAndExpand" Padding="5">
+                <Grid VerticalOptions="FillAndExpand" Margin="0, 15, 0, 0">
+                    <!--
+                    <Grid.ColumnSpacing>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>20</OnIdiom.Phone>
+                            <OnIdiom.Tablet>40</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.ColumnSpacing>
+                    <Grid.RowSpacing>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>10</OnIdiom.Phone>
+                            <OnIdiom.Tablet>20</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.RowSpacing>
+                    <Grid.Padding>
+                        <OnIdiom x:TypeArguments="Thickness">
+                            <OnIdiom.Phone>10,10,10,0</OnIdiom.Phone>
+                            <OnIdiom.Tablet>20,20,20,0</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.Padding>
+                    -->
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+			            FontAttributes="Bold"
+			            FontSize="Medium"
+			            Text="Name "
+			            TextColor="#3498DB" />
+                    
+                    <Entry 
+                        x:Name="userName"
+			            Grid.Row="0"
+			            Grid.Column="1"
+                        TextColor="Gray"
+                        Text="{Binding userName}"
+			            Placeholder="First and Last" 
+			            Keyboard="Default"/>
+
+                    <Label
+			            Grid.Row="1"
+			            FontAttributes="Bold"
+			            FontSize="Medium"
+			            Text="Nationality "
+			            TextColor="#3498DB" />
+
+                    <Picker 
+			            x:Name="userNationalityType"
+			            Grid.Row="1"
+			            Grid.Column="1"
+			            SelectedIndex="{Binding userNationality}">
+                        <Picker.Items>
+                            <x:String>Turkish</x:String>
+                            <x:String>Other</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label
+			            Grid.Row="2"
+			            FontAttributes="Bold"
+			            FontSize="Medium"
+			            Text="Email "
+			            TextColor="#3498DB"
+			            VerticalOptions="Center" />
+
+                    <Entry 
+                        x:Name="userEmail"
+			            Grid.Row="2"
+			            Grid.Column="1"
+                        TextColor="Gray" 
+                        Text="{Binding userEmail}"
+			            Placeholder="Email" 
+			            Keyboard="Email"/>
+
+                    <Label
+			            Grid.Row="3"
+			            FontAttributes="Bold"
+			            FontSize="Medium"
+			            Text="Phone "
+			            TextColor="#3498DB"
+			            VerticalOptions="Center"  />
+
+                    <Entry 
+                        x:Name="userPhone"
+			            Grid.Row="3"
+			            Grid.Column="1"
+                        TextColor="Gray" 
+                        Text="{Binding userPhone}"
+			            Placeholder="555-555-5555" 
+			            Keyboard="Telephone"/>
+
+                    <Label
+			            Grid.Row="4"
+			            FontSize="Medium"
+			            Text="Birthday"
+			            TextColor="#3498DB"
+			            VerticalOptions="Center"  />
+
+                    <DatePicker 
+                        x:Name="userBirthday" 
+                        Date="{Binding userBirthday}"
+			            Grid.Row="4"
+			            Grid.Column="1"/>
+                        
+                    <Label
+			            Grid.Row="5"
+			            FontSize="Medium"
+			            Text="Gender "
+			            TextColor="#3498DB"
+			            VerticalOptions="Center"  />
+
+                    <Picker 
+			            x:Name="userGender"
+			            Grid.Row="5"
+			            Grid.Column="1"
+			            SelectedIndex="{Binding userGender}">
+                        <Picker.Items>
+                            <x:String>Male</x:String>
+                            <x:String>Famale</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label
+			            Grid.Row="6"
+			            FontAttributes="Bold"
+			            FontSize="Medium"
+			            Text="Blood Group "
+			            TextColor="#3498DB"
+			            VerticalOptions="Center"  />
+
+
+                    <Picker 
+			            x:Name="userBloodType"
+			            Grid.Row="6"
+			            Grid.Column="1"
+			            SelectedIndex="{Binding userBloodGroup}">
+                        <Picker.Items>
+                            <x:String>AB RH - </x:String>
+                            <x:String>AB RH + </x:String>
+                            <x:String>A RH -</x:String>
+                            <x:String>A RH + </x:String>
+                            <x:String>B RH -</x:String>
+                            <x:String>B RH +</x:String>
+                            <x:String>O RH -</x:String>
+                            <x:String>O RH +</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+
+            </ScrollView>
+            
+            <Button 
+			    x:Name="ButtonSave"
+			    BackgroundColor="#3498DB"
+			    BorderRadius="0"
+			    TextColor="White" 
+			    Text="Save"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+<!--
+                <Grid>
+                <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*" />
+                <RowDefinition Height="4*" />
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal" Grid.ColumnSpan="3">
+                <Image Source="icon.png" Margin="5" HeightRequest="40" />
+                    <Entry Placeholder="What's on your mind?" >
+                    </Entry>
+            </StackLayout>
+                <Button Image="icon_caret.png" BackgroundColor="White" Command="{Binding ShowLiveCommand}" Text="LIVE" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" />
+                <Button Image="icon_caret.png" BackgroundColor="White" Text="PHOTO" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" Grid.Column="1"/>
+                <Button Image="icon_caret.png" BackgroundColor="White" Text="CHECK IN" TextColor="Black" FontAttributes="Bold" FontSize="10" Grid.Row="1" Grid.Column="2"/>
+            </Grid>
+        -->

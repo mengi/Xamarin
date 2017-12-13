@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10.ProfilePage"
+             xmlns:local="clr-namespace:App10.ItemModel"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  x:Name="itemMenu_filter"  Icon="ic_filter_list_white_24dp.png" Priority="0" Clicked="onFilter"/>
+        <ToolbarItem  x:Name="itemMenu_login" Icon="ic_account_circle_white_24dp.png"  Priority="1" Clicked="onLogin"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical">
+            <SearchBar x:Name="annuoncSearch" SearchButtonPressed="annuoncSearchButton" TextChanged="onAnnuoncTextChanged"/>
+
+
+            <!--
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding IsBusy}" Padding="12"
+                         AbsoluteLayout.LayoutFlags="PositionProportional"
+                         AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                    <ActivityIndicator IsRunning="{Binding IsBusy}" Color ="#80000000"/>
+                    <Label Text="Loading..." HorizontalOptions="Center" TextColor="Gray"/>
+                </StackLayout>
+                -->
+            
+                <ListView 
+                    x:Name="listViewAnnounc" 
+                    CachingStrategy="RecycleElement"
+                    IsPullToRefreshEnabled="True"
+                    IsRefreshing="{Binding IsRefreshing}"
+                    RefreshCommand="{Binding RefreshCommand}"
+                    RowHeight="175" 
+                    ItemSelected="onSelectedAnnounc"
+                    ItemsSource="{Binding }" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <local:AnnuoncItemModel/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+          
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+    

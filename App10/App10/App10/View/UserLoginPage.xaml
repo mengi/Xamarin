@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10.View.UserLoginPage"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Vertical" Padding="15,30,15,30">
+                    <controls:CircleImage
+                        x:Name="firmIcon"
+					    HeightRequest="150"
+					    WidthRequest="150"
+					    HorizontalOptions="CenterAndExpand"
+					    VerticalOptions ="CenterAndExpand"
+					    BorderColor="#2196F3"
+                        Aspect="AspectFill"
+					    BorderThickness="1">
+                    </controls:CircleImage>
+
+                    <Label x:Name="lblfirmName"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" 
+                           FontSize="Large" FontAttributes="Bold" TextColor="Gray"/>
+                    
+                    <StackLayout VerticalOptions="Center" Margin="5, 10, 5, 10">
+                        <Entry x:Name="loginUserEmail" TextColor="Gray" Placeholder="Email" Keyboard="Email"/>
+                        <Entry x:Name="loginUserPassword" TextColor="Gray" Placeholder="Password" IsPassword="True"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Button x:Name="loginButton" HorizontalOptions="FillAndExpand" BackgroundColor="#2196F3" BorderRadius="0" TextColor="White" Text="Login" />
+                            <Button x:Name="loginRegisterButton" HorizontalOptions="FillAndExpand" BackgroundColor="#81C134" BorderRadius="0" TextColor="White" Text="Register"/>
+                        </StackLayout>
+                        <Button x:Name="loginForgotPassword" VerticalOptions="Start" HorizontalOptions="StartAndExpand" BackgroundColor="White" 
+                                TextColor="Gray" FontAttributes="Bold" Text="Forgot My Password ?"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
+        <!--
+                    <StackLayout Margin="5, 1, 5, 1" VerticalOptions="Center">
+            <controls:CircleImage
+                x:Name="firmIcon"
+                        Source="doktor.png"
+					    HeightRequest="75"
+					    WidthRequest="75"
+					    HorizontalOptions="CenterAndExpand"
+					    VerticalOptions ="CenterAndExpand"
+					    BorderColor="#2196F3"
+                        Aspect="AspectFill"
+					    BorderThickness="1">
+            </controls:CircleImage>
+            
+            <Entry x:Name="loginUserEmail" Placeholder="Email" Keyboard="Email"/>
+            <Entry x:Name="loginUserPassword" Placeholder="Password" IsPassword="True"/>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="loginButton" HorizontalOptions="FillAndExpand" BackgroundColor="#2196F3" BorderRadius="0" TextColor="White" Text="Login" />
+                <Button x:Name="loginRegisterButton" HorizontalOptions="FillAndExpand" BackgroundColor="#81C134" BorderRadius="0" TextColor="White" Text="Register"/>
+            </StackLayout>
+        </StackLayout>
+                    -->
+                
+    </ContentPage.Content>
+</ContentPage>

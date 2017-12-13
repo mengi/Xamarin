@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App10.ItemModel"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="App10.MoviesPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  x:Name="itemMenu_filter"  Icon="ic_filter_list_white_24dp.png" Priority="0" Clicked="onFilter"/>
+        <ToolbarItem  x:Name="itemMenu_login" Icon="ic_account_circle_white_24dp.png"  Priority="1" Clicked="onLogin"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <SearchBar x:Name="moviesSearch" SearchButtonPressed="onMoviesSearchButton" TextChanged="onMoviesTextChanged"/>
+            <ListView 
+                x:Name="listViewMovies" 
+                CachingStrategy="RecycleElement" 
+                IsPullToRefreshEnabled="True"
+                ItemSelected="onSelectedVideo" 
+                IsRefreshing="{Binding IsRefreshing}"
+                RefreshCommand="{Binding RefreshCommand}"
+                ItemsSource="{Binding .}" 
+                HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:MoviesItemModel />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

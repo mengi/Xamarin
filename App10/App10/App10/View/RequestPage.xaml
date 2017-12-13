@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10.View.RequestPage">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Margin="0, 15, 0, 0"  Text="Request Form Page" FontSize="Large" TextColor="#2196F3" 
+                       HorizontalOptions="Center" VerticalOptions="Center"/>
+            
+            <ScrollView VerticalOptions="FillAndExpand" Padding="5">
+
+                <Grid VerticalOptions="FillAndExpand" Margin="0, 15, 0, 0">
+                    <!--
+                    <Grid.ColumnSpacing>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>20</OnIdiom.Phone>
+                            <OnIdiom.Tablet>40</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.ColumnSpacing>
+                    <Grid.RowSpacing>
+                        <OnIdiom x:TypeArguments="x:Double">
+                            <OnIdiom.Phone>10</OnIdiom.Phone>
+                            <OnIdiom.Tablet>20</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.RowSpacing>
+                    <Grid.Padding>
+                        <OnIdiom x:TypeArguments="Thickness">
+                            <OnIdiom.Phone>10,10,10,0</OnIdiom.Phone>
+                            <OnIdiom.Tablet>20,20,20,0</OnIdiom.Tablet>
+                        </OnIdiom>
+                    </Grid.Padding>
+                    -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+			            Grid.Row="0"
+			            FontSize="Medium"
+			            Text="Name"
+			            TextColor="#2196F3"
+			            VerticalOptions="Center"  />
+
+                    <Entry 
+                        x:Name="requestUserName"
+			            Grid.Row="0"
+			            Grid.Column="1"
+                        TextColor="Gray"
+			            Placeholder="First and Last" 
+			            Keyboard="Default"/>
+
+                    <Label
+			            Grid.Row="1"
+			            FontSize="Medium"
+			            Text="Email"
+			            TextColor="#2196F3"
+			            VerticalOptions="Center"  />
+
+                    <Entry 
+                        x:Name="requestUserEmail"
+			            Grid.Row="1"
+			            Grid.Column="1" 
+                        TextColor="Gray" 
+			            Placeholder="Email Enter"
+			            Keyboard="Email" />
+
+                    <Label
+			            Grid.Row="2"
+			            FontSize="Medium"
+			            Text="Phone"
+			            TextColor="#2196F3"
+			            VerticalOptions="Center"  />
+
+                    <Entry 
+                        x:Name="requestUserPhone"
+			            Grid.Row="2"
+			            Grid.Column="1" 
+                        TextColor="Gray" 
+			            Placeholder="506-806-0195"
+			            Keyboard="Telephone" />
+
+                    <Label
+			            Grid.Row="3"
+			            FontSize="Medium"
+			            Text="Service"
+			            TextColor="#3498DB"
+			            VerticalOptions="Center"  />
+
+                    <Picker 
+			            x:Name="requestUserService"
+			            Grid.Row="3"
+			            Grid.Column="1"
+			            SelectedIndex="{Binding requestUserService}">
+                        <Picker.Items>
+                            <x:String>Yüz ve Dudak Dolgusu</x:String>
+                            <x:String>Göz Altı Işık Dolgusu</x:String>
+                            <x:String>Fraksiyonel CO2 Lazer</x:String>
+                            <x:String>Q-Switched Nd:YAG Lazer</x:String>
+                            <x:String>Bölgesel Zayıflama</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Label
+			            Grid.Row="4"
+			            FontSize="Medium"
+			            Text="Request Day"
+			            TextColor="#3498DB"
+			            VerticalOptions="Center"  />
+
+                    <DatePicker 
+                        x:Name="requestUserDay" 
+			            Grid.Row="4"
+			            Grid.Column="1"/>
+
+                    <Label
+			            Grid.Row="5"
+			            FontAttributes="Bold"
+			            FontSize="Medium"
+			            Text="Message"
+			            TextColor="#2196F3"
+			            VerticalOptions="Center"  />
+
+                    <Editor 
+                        x:Name="requestUserMessage"
+			            Grid.Row="5"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+			            Grid.ColumnSpan="1"
+			            HeightRequest="150" TextColor="Gray"
+			            BackgroundColor="#103498DB"/>
+                </Grid>
+
+            </ScrollView>
+            <Button 
+			    x:Name="buttonRequest"
+			    BackgroundColor="#2196F3"
+			    BorderRadius="0"
+			    TextColor="White" 
+			    Text="Sumbit"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
